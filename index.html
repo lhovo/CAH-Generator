@@ -126,6 +126,10 @@
 							<option value="HOC">Reversed US Flag</option>
 							<option value="hat">Santa Hat</option>
 							<option value="box">Box</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
 						</select>
 				</div>
 				<div class="col-lg-4">
@@ -288,11 +292,11 @@
 						button.button('loading');
 						$.ajax({
 							type: 'POST',
-							url: 'http://mywastedlife.com/CAH/generator.php',
+							url: '/generator.php',
 							data: form.serialize()
 						}).done(function(){
 							dl_button.click(function(){
-								window.location = 'http://mywastedlife.com/CAH/files/' + batch + '/' + batch + '.zip';
+								window.location = '/files/' + batch + '/' + batch + '.zip';
 							});
 
 							dl_button.prop('disabled', false);
@@ -330,7 +334,7 @@
 					max_attempts = 10,
 					loadImages = function(attempt){
 						var img = new Image(),
-						    imgURL = 'http://mywastedlife.com/CAH/files/' + batch + '/' + batch  + '_' + i + '.png';
+						    imgURL = '/files/' + batch + '/' + batch  + '_' + i + '.png';
 						    
 						    if ($(col).html() != $(spinner).get(0).outerHTML) {
 							col = $('<div>').attr({
